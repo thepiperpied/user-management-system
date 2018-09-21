@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  api:
+    build: ./api
+    image: thepiperpied/palm-tree:0.0.1
+    ports:
+      - "4000:3001"
+    volumes:
+      - ./api:/app
+    command: ["npm", "run", "start-dev"]
+    links: 
+      - db
+    depends_on:
+      - db
+
+  db:
+    build: ./db
+    image: thepiperpied/palm-tree-db:0.0.1
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    command: ["neo4j"]
