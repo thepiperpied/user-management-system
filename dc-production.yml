@@ -3,7 +3,7 @@ version: '3'
 services:
   api:
     build: ./api
-    image: thepiperpied/palm-tree:beta
+    image: thepiperpied/ums:beta
     ports:
       - "3001:3001"
     command: ["npm", "run", "start"]
@@ -14,7 +14,7 @@ services:
 
   db:
   build: ./db
-  image: thepiperpied/palm-tree-db:0.0.1
+  image: thepiperpied/ums-db:0.0.1
   ports:
     - "7474:7474"
     - "7687:7687"
