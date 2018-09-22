@@ -4,6 +4,7 @@ const { GraphQLServer } = require('graphql-yoga');
 import { typeDefs } from './typeDefs';
 import { resolvers } from './resolvers';
 
+
 require('dotenv').config();
 
 const options = {
