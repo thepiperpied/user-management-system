@@ -8,12 +8,13 @@ export const typeDefs = `
     createdBy: ID
     createdDate: String
     profile: [Profile]
+    auth: [Auth]
   }
 
   type Auth{
-    passwords: Password!
+    passwords: [Password]!
     roles: ID!
-    loginAttempts: LoginAttempt!
+    loginAttempts: [LoginAttempt]!
   }
 
   type Password{
@@ -92,7 +93,16 @@ export const typeDefs = `
     next: [File]
   }
 
+  type Token{
+    key: String!
+  }
+
   type Query {
-    user(username: String!, password: String!): [User]
+    user: [User]
+  }
+
+  type Mutation{
+    register(username: String!, password: String!, question: String, answer: String, hint: String): [Token]
+    login(username: String!, password: String!): String!
   }
   `

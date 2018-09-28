@@ -2,5 +2,6 @@
     "presets": ["env"],
     "ignore": [
         "node_modules"
-    ]
+    ],
+    "plugins": ["transform-object-rest-spread"]
 }
