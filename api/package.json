@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "build": "npx babel ./src --out-dir ./dist --ignore './node_modules' && npm run prod",
-    "prebuild": "rm -rf build/*/** && npm run build",
+    "prebuild": "rimraf build/*/** && npm run build",
     "prod" : "NODE_ENV=production node ./dist/app.js",
     "start": "npm run prebuild",
     "start-dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/babel-node ./src/app.js"
@@ -27,6 +27,7 @@
     "babel-cli": "",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "nodemon": "1.17.1"
+    "nodemon": "1.17.1",
+    "rimraf": "^2.5.4"
   }
 }
