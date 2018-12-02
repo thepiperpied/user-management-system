@@ -7,7 +7,7 @@ const {
 import { typeDefs } from "./typedefs/index";
 import {
   resolvers
-} from './resolvers';
+} from './resolvers/index';
 
 
 require('dotenv').config();
