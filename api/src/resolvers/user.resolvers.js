@@ -14,10 +14,9 @@ export default {
     Query: {
         user: async (_, args, ctx) => {
 
-            console.log();
-
             let token = jsonwebtoken.verify(ctx.request.get('Authorization'), process.env.JWT_SECRET);
             let username = token.username;
+            
             if (!username) {
                 throw new Error('You are not authenticated!')
             }
@@ -84,7 +83,7 @@ export default {
 
             password = await bcrypt.hash(password, 10);
             let createdDate = new Date();
-            createdDate = toString(createdDate);
+            createdDate = createdDate.toString();
 
             question = question ? question : "null";
             answer = answer ? answer : "null";
