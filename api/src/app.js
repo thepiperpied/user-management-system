@@ -5,7 +5,7 @@ const {
 } = require('graphql-yoga');
 import {
   typeDefs
-} from './typeDefs';
+} from './typeDefs/index';
 import {
   resolvers
 } from './resolvers';
