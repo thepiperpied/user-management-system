@@ -4,9 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "npx babel ./src --out-dir ./dist --ignore './node_modules'",
-    "prebuild": "rm -rf build/*/**",
-    "start": "rm -rf build/*/** && npx babel ./src --out-dir ./dist --ignore './node_modules' && NODE_ENV=production node ./dist/app.js",
+    "build": "npx babel ./src --out-dir ./dist --ignore './node_modules' && npm run prod",
+    "prebuild": "rm -rf build/*/** && npm run build",
+    "prod" : "NODE_ENV=production node ./dist/app.js"
+    "start": "npm run prebuild",
     "start-dev": "./node_modules/.bin/nodemon --exec ./node_modules/.bin/babel-node ./src/app.js"
   },
   "author": "",
