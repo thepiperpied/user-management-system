@@ -1,9 +1,10 @@
 'use strict';
 
+import * as path from "path";
 const {
   GraphQLServer
 } = require('graphql-yoga');
-import { typeDefs } from "./typeDefs/index";
+import { typeDefs } from "./typedefs/index";
 import {
   resolvers
 } from './resolvers';
