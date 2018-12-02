@@ -13,11 +13,11 @@ services:
       - db
 
   db:
-  build: ./db
-  image: thepiperpied/ums-db:0.0.1
-  ports:
-    - "7474:7474"
-    - "7687:7687"
-  volumes:
-    - ./db/data:/data
-  command: ["neo4j"]
+    build: ./db
+    image: thepiperpied/ums-db:0.0.1
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./db/data:/data
+    command: ["neo4j"]
